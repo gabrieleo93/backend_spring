@@ -1,0 +1,21 @@
+<configuration>
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app.log</file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.tuapp" level="DEBUG" />
+
+    <root level="INFO">
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
+
+<!-- %d{yyyy-MM-dd HH:mm:ss}: Fecha y hora del registro en el formato especificado (año-mes-día hora:minuto:segundo).
+     [%thread]: Identificador del hilo que generó el registro.
+     %-5level: Nivel de registro (por ejemplo, INFO, DEBUG, ERROR) con un ancho máximo de 5 caracteres.
+     %logger{35}: Nombre del registrador (logger) truncado a 35 caracteres.
+     %msg: El mensaje del registro.
+     %n: Nueva línea. -->
